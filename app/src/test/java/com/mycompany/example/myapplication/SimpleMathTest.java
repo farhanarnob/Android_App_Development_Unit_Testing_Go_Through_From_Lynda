@@ -1,11 +1,18 @@
 package com.mycompany.example.myapplication;
 
+import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
 
 public class SimpleMathTest {
+
+    @Before
+    public void setUp() throws Exception {
+        fail("Explicitly failed");
+    }
 
     @Test
     public void testAdd() {
