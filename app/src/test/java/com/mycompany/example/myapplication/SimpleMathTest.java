@@ -1,10 +1,12 @@
 package com.mycompany.example.myapplication;
 
-import static org.junit.Assert.*;
-
+import org.junit.Ignore;
 import org.junit.Test;
 
+import static org.junit.Assert.assertEquals;
+
 public class SimpleMathTest {
+
     @Test
     public void testAdd() {
         SimpleMath sm = new SimpleMath();
@@ -12,6 +14,7 @@ public class SimpleMathTest {
         assertEquals("Simple Math is not adding correctly", 9, total);
     }
 
+    @Ignore
     @Test
     public void testDiff() {
         SimpleMath sm = new SimpleMath();

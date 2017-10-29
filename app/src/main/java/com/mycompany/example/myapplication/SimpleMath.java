@@ -9,4 +9,7 @@ public class SimpleMath {
     public int diff(int op1, int op2){
         return op1-op2;
     }
+    public int div(int op1, int op2){
+        return op1/op2;
+    }
 }
