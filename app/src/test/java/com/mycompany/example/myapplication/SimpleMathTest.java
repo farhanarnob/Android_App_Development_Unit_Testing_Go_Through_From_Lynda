@@ -1,9 +1,13 @@
 package com.mycompany.example.myapplication;
 
+import com.mycompany.example.myapplication.categories.FastTests;
+import com.mycompany.example.myapplication.categories.GoogleMapsIntegrationTests;
+
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.Test;
+import org.junit.experimental.categories.Category;
 import org.junit.rules.ExpectedException;
 
 import java.util.Arrays;
@@ -18,6 +22,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 
+@Category(FastTests.class)
 public class SimpleMathTest {
 
     //
@@ -35,6 +40,7 @@ public class SimpleMathTest {
         list = createList();
     }
 
+    @Category(GoogleMapsIntegrationTests.class)
     @Test
     public void testAdd() {
         int total = sm.add(4, 5);
