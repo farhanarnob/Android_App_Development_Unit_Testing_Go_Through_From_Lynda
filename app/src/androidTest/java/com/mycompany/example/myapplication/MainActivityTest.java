@@ -3,7 +3,6 @@ package com.mycompany.example.myapplication;
 import android.app.Activity;
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
-import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
 import android.widget.TextView;
 
@@ -23,9 +22,10 @@ import static org.junit.Assert.assertTrue;
  */
 @RunWith(AndroidJUnit4.class)
 public class MainActivityTest {
+    // custom rule
     @Rule
-    public ActivityTestRule<MainActivity> mainActivityActivityTestRule =
-            new ActivityTestRule<>(MainActivity.class);
+    public MainActivityTestRule<MainActivity> mainActivityActivityTestRule =
+            new MainActivityTestRule<>(MainActivity.class);
     private Activity mActivity;
     private TextView mHelloView;
     private Context context;
