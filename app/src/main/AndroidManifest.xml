@@ -16,8 +16,14 @@
             </intent-filter>
         </activity>
         <activity android:name=".SecondActivity">
-            <!--only for testing-->
+
+            <!-- only for testing -->
         </activity>
+
+        <service
+            android:name=".MyDemoService"
+            android:enabled="true"
+            android:exported="true"></service>
     </application>
 
 </manifest>
