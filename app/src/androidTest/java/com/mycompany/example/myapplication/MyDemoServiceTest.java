@@ -3,7 +3,6 @@ package com.mycompany.example.myapplication;
 import android.content.Intent;
 import android.os.IBinder;
 import android.support.test.InstrumentationRegistry;
-import android.support.test.rule.ServiceTestRule;
 import android.support.test.runner.AndroidJUnit4;
 
 import org.junit.Rule;
@@ -20,7 +19,7 @@ import static org.junit.Assert.assertNotNull;
 @RunWith(AndroidJUnit4.class)
 public class MyDemoServiceTest {
     @Rule
-    public ServiceTestRule myServiceTestRule = new ServiceTestRule();
+    public MyServiceTestRule myServiceTestRule = new MyServiceTestRule();
 
     @Test
     public void testService() throws TimeoutException {
