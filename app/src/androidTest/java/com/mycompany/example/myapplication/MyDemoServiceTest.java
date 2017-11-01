@@ -3,6 +3,9 @@ package com.mycompany.example.myapplication;
 import android.content.Intent;
 import android.os.IBinder;
 import android.support.test.InstrumentationRegistry;
+import android.support.test.filters.MediumTest;
+import android.support.test.filters.RequiresDevice;
+import android.support.test.filters.SdkSuppress;
 import android.support.test.runner.AndroidJUnit4;
 
 import org.junit.Rule;
@@ -15,7 +18,11 @@ import static org.junit.Assert.assertNotNull;
 
 /**
  * Created by ${farhanarnob} on ${06-Oct-16}.
+ * Testing for testing
  */
+@MediumTest
+@SdkSuppress(minSdkVersion = 21)
+@RequiresDevice// for real device
 @RunWith(AndroidJUnit4.class)
 public class MyDemoServiceTest {
     @Rule
