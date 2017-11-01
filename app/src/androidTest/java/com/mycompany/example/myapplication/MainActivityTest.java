@@ -2,8 +2,13 @@ package com.mycompany.example.myapplication;
 
 import android.app.Activity;
 import android.content.Context;
+import android.os.RemoteException;
 import android.support.test.InstrumentationRegistry;
 import android.support.test.runner.AndroidJUnit4;
+import android.support.test.uiautomator.UiDevice;
+import android.support.test.uiautomator.UiObject;
+import android.support.test.uiautomator.UiObjectNotFoundException;
+import android.support.test.uiautomator.UiSelector;
 import android.widget.TextView;
 
 import org.junit.Before;
@@ -36,6 +41,40 @@ public class MainActivityTest {
         mHelloView = mActivity.findViewById(R.id.test_view_hello_world);
         // get context use InstrumentationRegistry
         context = InstrumentationRegistry.getTargetContext();
+    }
+
+
+    // ui test ui automator
+    @Test
+    public void testPressBackButton() {
+        UiDevice.getInstance(InstrumentationRegistry.getInstrumentation()).pressBack();
+    }
+
+    // ui test with ui automator
+    @Test
+    public void testUiDevice() throws RemoteException {
+        UiDevice device = UiDevice.getInstance(InstrumentationRegistry.getInstrumentation());
+        if (device.isScreenOn()) {
+            device.setOrientationLeft();
+            device.openNotification();
+        }
+    }
+
+    @Test
+    public void testUiSelector() throws InterruptedException, UiObjectNotFoundException {
+        UiDevice device = UiDevice.getInstance(InstrumentationRegistry.getInstrumentation());
+
+        UiSelector editTextSelector = new UiSelector()
+                .className("android.widget.EditText")
+                .focusable(true)
+                .text("Hello World!");
+
+        UiObject editTextWidget = device.findObject(editTextSelector);
+
+        editTextWidget.setText("No Man");
+
+        Thread.sleep(2000);
+
     }
 
     @Test
